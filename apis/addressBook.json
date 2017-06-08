@@ -6,7 +6,8 @@
         "license": {
             "name": "Apache 2.0",
             "url": "https://www.apache.org/licenses/LICENSE-2.0"
-        }
+        },
+        "version": "1.0"
     },
     "paths": {
         "/addresses": {
@@ -78,15 +79,19 @@
             "type": "object",
             "properties": {
                 "id": {
+                    "description": "The addresss ID",
                     "type": "string"
                 },
                 "fullName": {
+                    "description": "Person's name",
                     "type": "string"
                 },
                 "address1": {
+                    "description": "House name/number",
                     "type": "string"
                 },
                 "postcode": {
+                    "description": "The post/zip code",
                     "type": "string"
                 }
             }
