@@ -2,6 +2,94 @@
     "swagger": "2.0",
     "info": {
         "title": "Address book API",
-        "description": "Testing"
+        "description": "Testing",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+    },
+    "paths": {
+        "/addresses": {
+            "get": {
+                "description": "Get addresses",
+                "responses": {
+                    "200": {}
+                }
+            },
+            "post": {
+                "description": "Add address",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/address"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {}
+                }
+            }
+        },
+        "/addresses/{addressID}": {
+            "get": {
+                "description": "Get an address",
+                "responses": {
+                    "200": {}
+                }
+            },
+            "put": {
+                "description": "Update an address",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/address"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {}
+                }
+            },
+            "delete": {
+                "description": "Delete and address",
+                "responses": {
+                    "204": {}
+                }
+            },
+            "parameters": [
+                {
+                    "name": "addressID",
+                    "in": "path",
+                    "description": "The addresss ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ]
+        }
+    },
+    "definitions": {
+        "address": {
+            "title": "Root Type",
+            "description": "The root of the address type's schema.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "address1": {
+                    "type": "string"
+                },
+                "postcode": {
+                    "type": "string"
+                }
+            }
+        }
     }
 }
