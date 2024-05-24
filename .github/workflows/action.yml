@@ -1,7 +1,7 @@
 name: Ready API Testing POC
 
 on:
-    workflow_dispatch: #TODO Add execution on schedule
+    workflow_dispatch:
       inputs:
         env:
           description: Which env to run tests against?
@@ -18,7 +18,7 @@ on:
 
 jobs:
     run_ready_api_test:
-        runs-on: ubuntu-latest 
+        runs-on: codebuild-foo-${{ github.run_id }}-${{ github.run_attempt }}
         steps:
             - name: Clone repo
               uses: actions/checkout@v4
