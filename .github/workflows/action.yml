@@ -1,0 +1,26 @@
+name: Ready API Testing POC
+
+on:
+    workflow_dispatch: #TODO Add execution on schedule
+      inputs:
+        env:
+          description: Which env to run tests against?
+          required: true
+          type: choice
+          default: test
+          options:
+            - dev
+            - test
+        ready_api_args:
+          description: Additional args to pass to Ready API
+          required: false
+          type: string
+
+jobs:
+    run_ready_api_test:
+        runs-on: ubuntu-latest 
+        steps:
+            - name: Clone repo
+              uses: actions/checkout@v4
+            - name: Hello
+              run: echo HelloWorld
