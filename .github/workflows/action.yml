@@ -18,7 +18,7 @@ on:
 
 jobs:
     run_ready_api_test:
-        runs-on: codebuild-foo-${{ github.run_id }}-${{ github.run_attempt }}
+        runs-on: codebuild-gitlab-runner-${{ github.run_id }}-${{ github.run_attempt }}
         steps:
             - name: Clone repo
               uses: actions/checkout@v4
